@@ -1,5 +1,6 @@
 import supabase from '@/utils/supabase'
 import React from 'react'
+import Card from '@/app/components/card';
 
 interface Routine {
     routine_id: string;
@@ -20,7 +21,8 @@ interface Routine {
     level: string;
 }
 
-export default async function Page() {
+
+export default async function RoutinesPage() {
     const { data: routines, error } = await supabase.from('routines').select()
 
     routines as Routine[];
@@ -29,11 +31,9 @@ export default async function Page() {
         console.log('Error fetching', error)
     }
 
-    return <div className='m-4 grid grid-cols-4 gap-8'>
+    return <div className='m-4 grid grid-cols-1 lg:grid-cols-4 gap-8'>
         {(routines?.map((routine) => (
-            <a href={`/weeks?routine=${routine.routine_id}`} key={routine.routine_id} className='text-white bg-slate-800 p-2'>
-                {routine.name}
-            </a>
+            <Card href={'/routines/[id]'} as={`/routines/${routine.routine_id}`} name={routine.name} image={routine.main_img_url} id={routine.routine_id} key={routine.routine_id} />
         ))
         )}
     </div>
