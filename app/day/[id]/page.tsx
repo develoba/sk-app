@@ -1,4 +1,4 @@
-import supabase from '@/utils/supabase';
+import supabase from '../../utils/supabase';
 import React from 'react'
 import VideoButton from './VideoButton';
 import DescButton from './DescButton';

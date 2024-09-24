@@ -1,4 +1,4 @@
-import supabase from '@/utils/supabase';
+import supabase from '../../utils/supabase';
 import Link from 'next/link';
 import React from 'react'
 

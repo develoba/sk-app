@@ -1,6 +1,6 @@
-import supabase from '@/utils/supabase'
+import supabase from '../utils/supabase'
 import React from 'react'
-import Card from '@/app/components/card';
+import Card from '../components/card';
 
 interface Routine {
     routine_id: string;
