@@ -21,6 +21,11 @@ const nextConfig = {
       },
     ],
   },
+  experimental: {
+    appDir: true, // Si usas la carpeta `app`
+  },
+  pageExtensions: ["ts", "tsx", "js", "jsx"], // asegúrate de que coincidan con tus archivos
+  output: "standalone", // para vercel
 };
 
 module.exports = withPWA(nextConfig);
